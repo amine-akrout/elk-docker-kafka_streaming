@@ -3,9 +3,9 @@ version: '3.2'
 services:
   elasticsearch:
     build:
-      context: elasticsearch/
+      context: elk/elasticsearch/
       args:
-        ELK_VERSION: $ELK_VERSION
+        ELK_VERSION: 7.8.0
     container_name: elasticsearch
     volumes:
       - type: bind
@@ -28,9 +28,9 @@ services:
 
   logstash:
     build:
-      context: logstash/
+      context: elk/logstash/
       args:
-        ELK_VERSION: $ELK_VERSION
+        ELK_VERSION: 7.8.0
     container_name: logstash
     volumes:
       - type: bind
@@ -56,9 +56,9 @@ services:
 
   kibana:
     build:
-      context: kibana/
+      context: elk/kibana/
       args:
-        ELK_VERSION: $ELK_VERSION
+        ELK_VERSION: 7.8.0
     container_name: kibana
     volumes:
       - type: bind
