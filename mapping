@@ -1,0 +1,11 @@
+DELETE /velib-stations
+PUT velib-stations
+{
+  "mappings": {
+  		"properties": {
+  			"location": {
+  				"type": "geo_point"
+  			}
+  		}
+  	}
+ } 
